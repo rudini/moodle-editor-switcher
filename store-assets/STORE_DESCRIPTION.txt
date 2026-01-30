@@ -1,0 +1,45 @@
+Tired of navigating through Moodle settings just to change your text editor?
+
+Moodle Editor Switcher lets you instantly switch between different text editors directly from your browser toolbar. No more clicking through menus or waiting for page reloads!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+★ One-Click Switching
+Change your editor preference instantly without leaving your current page.
+
+★ All Moodle Editors Supported
+• TinyMCE - Full-featured rich text editor with advanced formatting
+• Atto - Moodle's lightweight built-in editor
+• Plain Text - Simple textarea for quick text entry
+• Default - Use your site's default editor
+
+★ Smart Detection
+Automatically detects and highlights your currently active editor when you open the popup.
+
+★ Secure & Private
+• Works with your existing Moodle session
+• No data collection or external requests
+• Open source code
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW IT WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Click the extension icon in your browser toolbar
+2. Select your preferred editor from the list
+3. Done! Your editor preference is instantly updated
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PERFECT FOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Teachers & Instructors who need different editors for different content types
+• Students who prefer plain text for quick submissions
+• Course Administrators testing editor configurations
+• Anyone who frequently switches between Moodle editors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This extension is open source and respects your privacy. No data is collected or shared with third parties.
