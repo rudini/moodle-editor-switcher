@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f98012;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d96a0a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B1538;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d1029;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a61d44;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B1538;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="url(#gradient1)"/>
+
+  <!-- HFTM-style geometric shape (angular/3D folded paper look) representing document/editor -->
+  <!-- Main fold - left side -->
+  <polygon points="32,28 64,28 64,72 32,56" fill="url(#gradient2)"/>
+
+  <!-- Main fold - right side -->
+  <polygon points="64,28 96,44 96,88 64,72" fill="url(#gradient3)"/>
+
+  <!-- Bottom extension - left -->
+  <polygon points="32,56 64,72 64,100 32,84" fill="#6d1029"/>
+
+  <!-- Bottom extension - right -->
+  <polygon points="64,72 96,88 96,100 64,100" fill="#8B1538"/>
+
+  <!-- Pencil/edit indicator - small white pencil icon -->
+  <g transform="translate(76, 76)">
+    <path d="M4,28 L28,4 L36,12 L12,36 L0,40 L4,28 Z" fill="white" opacity="0.95"/>
+    <path d="M28,4 L32,0 L40,8 L36,12 Z" fill="#f0f0f0"/>
+  </g>
+</svg>

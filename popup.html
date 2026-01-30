@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      background: #fff;
+      color: #1d2125;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #f98012 0%, #e8720c 100%);
+      color: white;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .header-text h1 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .header-text p {
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .content {
+      padding: 12px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6a737d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    .editor-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .editor-option {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      gap: 12px;
+    }
+
+    .editor-option:hover {
+      background: #f6f8fa;
+      border-color: #d0d7de;
+    }
+
+    .editor-option:active {
+      background: #f0f2f4;
+    }
+
+    .editor-option.active {
+      background: #fff8f3;
+      border-color: #f98012;
+      box-shadow: 0 0 0 1px #f98012;
+    }
+
+    .editor-option.active .editor-icon {
+      background: #f98012;
+      color: white;
+    }
+
+    .editor-icon {
+      width: 36px;
+      height: 36px;
+      background: #f0f2f4;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .editor-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .editor-name {
+      font-weight: 500;
+      color: #1d2125;
+      margin-bottom: 2px;
+    }
+
+    .editor-desc {
+      font-size: 11px;
+      color: #6a737d;
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #e1e4e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .editor-option.active .check-icon {
+      background: #f98012;
+      border-color: #f98012;
+      color: white;
+    }
+
+    .check-icon svg {
+      width: 12px;
+      height: 12px;
+      opacity: 0;
+    }
+
+    .editor-option.active .check-icon svg {
+      opacity: 1;
+    }
+
+    .status {
+      margin: 12px 12px 12px 12px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .status.success {
+      background: #dafbe1;
+      color: #1a7f37;
+    }
+
+    .status.error {
+      background: #ffebe9;
+      color: #cf222e;
+    }
+
+    .status.loading {
+      background: #fff8f3;
+      color: #bc4c00;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .footer {
+      padding: 10px 12px;
+      border-top: 1px solid #e1e4e8;
+      text-align: center;
+    }
+
+    .footer a {
+      font-size: 11px;
+      color: #6a737d;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #f98012;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Text Editor</h1>
+      <p>Switch editor preferences</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-label">Select Editor</div>
+    <div class="editor-list">
+      <button class="editor-option" data-editor="">
+        <div class="editor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <div class="editor-info">
+          <div class="editor-name">Default</div>
+          <div class="editor-desc">Use system default</div>
+        </div>
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </button>
+
+      <button class="editor-option" data-editor="tiny">
+        <div class="editor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+        </div>
+        <div class="editor-info">
+          <div class="editor-name">TinyMCE</div>
+          <div class="editor-desc">Full-featured rich text editor</div>
+        </div>
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </button>
+
+      <button class="editor-option" data-editor="atto">
+        <div class="editor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 7 4 4 20 4 20 7"></polyline>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
+          </svg>
+        </div>
+        <div class="editor-info">
+          <div class="editor-name">Atto</div>
+          <div class="editor-desc">Moodle's built-in editor</div>
+        </div>
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </button>
+
+      <button class="editor-option" data-editor="textarea">
+        <div class="editor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="17" y1="10" x2="3" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="17" y1="18" x2="3" y2="18"></line>
+          </svg>
+        </div>
+        <div class="editor-info">
+          <div class="editor-name">Plain Text</div>
+          <div class="editor-desc">Simple textarea without formatting</div>
+        </div>
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div id="status" class="status" style="display: none;"></div>
+
+  <div class="footer">
+    <a href="https://moodle.hftm.ch/user/editor.php" target="_blank">Open editor settings →</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

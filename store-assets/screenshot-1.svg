@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800">
+  <defs>
+    <linearGradient id="moodleOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f98012"/>
+      <stop offset="100%" style="stop-color:#e8720c"/>
+    </linearGradient>
+    <filter id="popupShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Browser chrome -->
+  <rect width="1280" height="800" fill="#f5f5f5"/>
+
+  <!-- Browser toolbar -->
+  <rect width="1280" height="80" fill="#dee1e6"/>
+  <circle cx="30" cy="40" r="8" fill="#ff5f57"/>
+  <circle cx="55" cy="40" r="8" fill="#febc2e"/>
+  <circle cx="80" cy="40" r="8" fill="#28c840"/>
+
+  <!-- URL bar -->
+  <rect x="200" y="20" width="700" height="40" rx="8" fill="white"/>
+  <text x="220" y="47" font-family="system-ui, sans-serif" font-size="14" fill="#333">moodle.hftm.ch/course/modedit.php?update=462929</text>
+
+  <!-- Extension icon in toolbar -->
+  <rect x="1050" y="20" width="40" height="40" rx="8" fill="url(#moodleOrange)"/>
+  <g transform="translate(1058, 28)">
+    <polygon points="5,4 12,4 12,15 5,12" fill="#8B1538"/>
+    <polygon points="12,4 19,7 19,18 12,15" fill="#a61d44"/>
+    <path d="M16,16 L22,10 L24,12 L18,18 L15,19 L16,16 Z" fill="white"/>
+  </g>
+
+  <!-- Moodle page content -->
+  <rect y="80" width="1280" height="720" fill="white"/>
+
+  <!-- Moodle header -->
+  <rect y="80" width="1280" height="60" fill="#1d2125"/>
+  <rect x="20" y="95" width="120" height="30" rx="4" fill="#f98012"/>
+  <text x="45" y="117" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">HFTM Moodle</text>
+
+  <!-- Breadcrumb -->
+  <rect y="140" width="1280" height="50" fill="#f8f9fa"/>
+  <text x="40" y="172" font-family="system-ui, sans-serif" font-size="13" fill="#6a737d">Dashboard / Courses / Computer Science / Edit Activity</text>
+
+  <!-- Page title -->
+  <text x="40" y="230" font-family="system-ui, sans-serif" font-size="24" font-weight="600" fill="#1d2125">Edit Assignment</text>
+
+  <!-- Form area -->
+  <rect x="40" y="260" width="900" height="400" rx="8" fill="white" stroke="#dee2e6"/>
+
+  <text x="60" y="300" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#1d2125">Description</text>
+
+  <!-- Editor toolbar mockup -->
+  <rect x="60" y="320" width="860" height="40" fill="#f8f9fa" stroke="#dee2e6"/>
+  <rect x="70" y="330" width="60" height="20" rx="3" fill="#dee2e6"/>
+  <rect x="140" y="330" width="60" height="20" rx="3" fill="#dee2e6"/>
+  <rect x="210" y="330" width="40" height="20" rx="3" fill="#dee2e6"/>
+  <rect x="260" y="330" width="40" height="20" rx="3" fill="#dee2e6"/>
+  <rect x="310" y="330" width="40" height="20" rx="3" fill="#dee2e6"/>
+
+  <!-- Editor content area -->
+  <rect x="60" y="360" width="860" height="200" fill="white" stroke="#dee2e6"/>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="14" fill="#6a737d">Enter your description here...</text>
+
+  <!-- Extension popup overlay -->
+  <g transform="translate(820, 100)" filter="url(#popupShadow)">
+    <rect width="300" height="380" rx="12" fill="white"/>
+
+    <!-- Popup header -->
+    <rect width="300" height="60" rx="12" fill="url(#moodleOrange)"/>
+    <rect y="48" width="300" height="12" fill="url(#moodleOrange)"/>
+    <circle cx="35" cy="30" r="14" fill="white" opacity="0.2"/>
+    <text x="60" y="28" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Text Editor</text>
+    <text x="60" y="45" font-family="system-ui, sans-serif" font-size="10" fill="white" opacity="0.9">Switch editor preferences</text>
+
+    <!-- Options -->
+    <g transform="translate(12, 72)">
+      <text x="0" y="0" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#6a737d" letter-spacing="0.5">SELECT EDITOR</text>
+
+      <!-- Option 1 -->
+      <rect y="12" width="276" height="52" rx="6" fill="white" stroke="#e1e4e8"/>
+      <circle cx="28" cy="38" r="14" fill="#f0f2f4"/>
+      <text x="52" y="34" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#1d2125">Default</text>
+      <text x="52" y="48" font-family="system-ui, sans-serif" font-size="9" fill="#6a737d">Use system default</text>
+
+      <!-- Option 2 - Active -->
+      <rect y="72" width="276" height="52" rx="6" fill="#fff8f3" stroke="#f98012" stroke-width="2"/>
+      <circle cx="28" cy="98" r="14" fill="#f98012"/>
+      <text x="52" y="94" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#1d2125">TinyMCE</text>
+      <text x="52" y="108" font-family="system-ui, sans-serif" font-size="9" fill="#6a737d">Full-featured rich text editor</text>
+      <circle cx="258" cy="98" r="8" fill="#f98012"/>
+      <path d="M254,98 L257,101 L263,95" stroke="white" stroke-width="1.5" fill="none"/>
+
+      <!-- Option 3 -->
+      <rect y="132" width="276" height="52" rx="6" fill="white" stroke="#e1e4e8"/>
+      <circle cx="28" cy="158" r="14" fill="#f0f2f4"/>
+      <text x="52" y="154" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#1d2125">Atto</text>
+      <text x="52" y="168" font-family="system-ui, sans-serif" font-size="9" fill="#6a737d">Moodle's built-in editor</text>
+
+      <!-- Option 4 -->
+      <rect y="192" width="276" height="52" rx="6" fill="white" stroke="#e1e4e8"/>
+      <circle cx="28" cy="218" r="14" fill="#f0f2f4"/>
+      <text x="52" y="214" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#1d2125">Plain Text</text>
+      <text x="52" y="228" font-family="system-ui, sans-serif" font-size="9" fill="#6a737d">Simple textarea</text>
+    </g>
+
+    <!-- Success message -->
+    <rect x="12" y="330" width="276" height="36" rx="6" fill="#dafbe1"/>
+    <text x="150" y="353" font-family="system-ui, sans-serif" font-size="11" fill="#1a7f37" text-anchor="middle">Editor switched successfully</text>
+  </g>
+
+  <!-- Arrow pointing to extension -->
+  <g transform="translate(980, 60)">
+    <path d="M0,30 Q30,30 40,10" stroke="#f98012" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+    <polygon points="42,5 50,12 40,15" fill="#f98012"/>
+  </g>
+  <text x="950" y="35" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f98012">Click here!</text>
+</svg>
